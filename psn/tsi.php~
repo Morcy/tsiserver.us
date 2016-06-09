@@ -1,0 +1,36 @@
+
+<?php
+	include("../config/dev.php");
+
+$formUrl = "http://".$domain."/login.php";
+$selfUrl = "http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"];
+
+function getpsnid($sessId) {
+    $sources = array("us","eumypsn","euforums"); $psnid = "0";
+    for ($i=0;isset($sources[$i]) && !isPsnIdValid($psnid);$i++) {
+        $url = "http://psn.tsiserver.us/out.php?sessionId=" . $sessId . "&source=" . $sources[$i];
+        $psnid = file_get_contents($url);
+    }
+    return $psnid;
+}
+
+function isPsnIdValid($psnid) {
+    $regex = '/([a-z].{2,15})/i';
+    preg_match_all($regex, $psnid, $newid, PREG_SET_ORDER);
+    return isset($newid[0][1]) && $psnid == $newid[0][1];
+}
+
+if (isset($_GET['sessionId'])) {
+    // get the proper psnid by the given sessionId
+    $psnid = getpsnid($_GET['sessionId']);
+    // TODO: connect with your user management here
+	header ("Location: http://beta.tsiserver.us/auth?gamertag=". $psnid);
+	exit();
+	
+} else {
+    // forward to the sign in page
+    // with your page url as returnURL by GET
+    header ("Location: " . $formUrl . "?errorID=invalid");
+}
+
+?> 

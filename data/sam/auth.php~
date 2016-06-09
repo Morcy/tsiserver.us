@@ -1,0 +1,21 @@
+<?php
+if(isset($_GET['gamertag']))
+{
+	//Sets cookie, then refreshes page
+	setcookie('user_id',$_GET['gamertag'], time() + (86400 * 7),'/', 'beta.tsiserver.us'); // 86400 = 1 day
+	header ("Location: http://beta.tsiserver.us");
+	exit();
+}
+
+if(isset($_GET['logout']))
+{
+	if($_GET['logout'] == TRUE)
+	{	if (isset($_COOKIE['user_id'])) {
+					unset($_COOKIE['user_id']);
+					setcookie('user_id', null, -1, '/', 'beta.tsiserver.us');
+		}
+	}
+	header ("Location: http://beta.tsiserver.us");
+	exit();
+}
+?>

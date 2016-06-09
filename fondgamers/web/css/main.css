@@ -1,0 +1,119 @@
+body,html {
+background:#000 url("../img/dark_hardwood.jpg") repeat;
+color:#F1F1F1;
+
+}
+.semi-titles {
+	color:#999;
+	letter-spacing: 0.0625em;
+	font-size:16px;
+	font-weight:light;
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif; }
+}
+#logonew {
+	
+}
+.lp-nav {
+	margin-top:20px;
+	width:140px;
+	height:200px;
+	border: 1px solid #cccccc;
+	background:#fff;
+}
+.lp nav {
+
+}
+.pro-info {
+	float:right;
+	font-weight:light;
+}
+.pro-info a:hover {
+	color:white;
+}
+.pro-info a {
+	font-weight:bold;
+	font-size:11px;
+	padding-right:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	display:inline;
+}
+a:link {
+    text-decoration: none;
+	color:inherit;
+}
+
+.login {
+	
+	width:141px;
+	height:20px;
+	float:left;
+	border: 1px solid #cccccc;
+	border-top:0;
+	border-left:0;
+}
+.login a {
+	color:#999;
+	font-weight:bold;
+	font-size:14px;
+	text-align:center;
+	padding-left:4px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.login a:hover {
+	color:black;
+}
+.body-container-top {
+	margin-top:20px;
+	width:1024px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.body-container {
+	
+	width:1024px;
+	min-height:600px;
+	margin-left:auto;
+	margin-right:auto;
+	border: 1px solid #cccccc;
+	background-color:#FFFFFF;
+	border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+}
+.right-news {
+	float:right;
+	margin:10px;
+	margin-top:-210px;
+	width:150px;
+	height:375px;
+	background:#FFF;
+	border: 1px solid #cccccc;
+}
+
+@font-face {
+    font-family: Flama;
+    src: url(fonts/Flama-Bold.otf);
+}
+
+
+.footar {
+width:900px;
+height:35px;
+margin-top:20px;
+margin-right:auto;
+margin-left:auto;
+}
+.footar p {
+	color:#F1F1F1;
+	font-size:10px;
+	text-align:center;
+	letter-spacing: 2px;
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif; 
+	
+	
+}
+
+
+
+
+

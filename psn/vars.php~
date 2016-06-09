@@ -1,0 +1,26 @@
+<?php
+
+// Main Variables
+$info = array(
+	"name"=>"GetId Script",
+	"sourced"=>"http://api.geekweb.org/psn/getid/",
+	"description"=>"GET PSN-ID by sessionId",
+	"version"=>"0.205",
+	"state"=>"stable",
+	"update"=>"2012-02-23",
+	"licence"=>"GNU GPL v3",
+	"creator"=>"PSNAPI.ORG: http://psnapi.org/"
+);
+
+define("title","API: " . $info["description"] . " [" . $info["state"] . "] (v" . $info["version"] . ")");
+define("selfUrl","http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"]);
+define("apiUrl","https://tsiserver.us/psn/");
+$info['codes'] = constant("apiUrl")."code.php";
+
+// constants (for the url calls)
+define("formUrl",constant("apiUrl")."form.php?returnURL=");
+define("serviceUrl","https://store.playstation.com/external/index.vm?returnURL=");
+define("userAgent","Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)");
+define("defaultSource","us"); // options: us, eumypsn, euforums
+
+?>

@@ -1,0 +1,28 @@
+{"Groups":[
+  {
+    "UniqueId": "Group-1",
+    "Title": "Developer News",
+    "Subtitle": "TSISERVER.US",
+    "ImagePath": "Assets/DarkGray.png",
+    "Description" : "Cath up with the latest development news in this group of updates!",
+    "Items":
+    [
+      {
+        "UniqueId": "Group-1-Item-1",
+        "Title": "Virtual Terminal",
+        "Subtitle": "Item Subtitle: The latest app for PSM.",
+        "ImagePath": "Assets/LightGray.png",
+        "Description": "Item Description: Virtual Terminal is the successful hacking app for PlayStation... [READ MORE]",
+        "Content" : "https://tsiserver.us/article?id=VTAPP"
+      },
+      {
+        "UniqueId": "Group-1-Item-1",
+        "Title": "Win 8 App",
+        "Subtitle": "Item Subtitle: Catch up from your computer.",
+        "ImagePath": "Assets/LightGray.png",
+        "Description": "Item Description: Catch up with the latest news directly from your computer.",
+        "Content" : "https://tsiserver.us/article?id=VTAPP" }
+    ]
+  }
+]
+}

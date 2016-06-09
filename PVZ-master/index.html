@@ -1,0 +1,124 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Phaser - Making your first game, part 1</title>
+    <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+function preload() {
+
+    game.load.image('background', 'assets/bathroom.png');
+    game.load.spritesheet('dude', 'assets/white_dress.png', 51.25, 48);
+    game.load.image('the_end', 'assets/man_woman.png')
+}
+
+var tranny1;
+var tranny2;
+var tranny3;
+var tranny4;
+var tranny5;
+var platforms;
+var cursors;
+
+function create() {
+//  We're going to be using physics, so enable the Arcade Physics system
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    //  A simple background for our game
+    game.add.sprite(0, 0, 'background');
+
+    // The tranny and its settings
+    tranny_start = 800 - 32;
+    tranny1 = game.add.sprite(tranny_start, game.world.height - 100, 'dude');
+    tranny2 = game.add.sprite(tranny_start -7, game.world.height - 145, 'dude');
+    tranny3 = game.add.sprite(tranny_start-16, game.world.height - 190, 'dude');
+    tranny4 = game.add.sprite(tranny_start-27, game.world.height - 235, 'dude');
+    tranny5 = game.add.sprite(tranny_start-40, game.world.height - 280, 'dude');
+
+    //  Our two animations, walking left and right.
+    tranny1.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7], 2, true);
+    tranny2.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7], 2, true);
+    tranny3.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7], 2, true);
+    tranny4.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7], 2, true);
+    tranny5.animations.add('left', [0, 1, 2, 3, 4, 5, 6, 7], 2, true);
+    //  We need to enable physics on the tranny
+    game.physics.arcade.enable(tranny1);
+    game.physics.arcade.enable(tranny2);
+    game.physics.arcade.enable(tranny3);
+    game.physics.arcade.enable(tranny4);
+    game.physics.arcade.enable(tranny5);
+    tranny1.body.collideWorldBounds = true;
+    tranny2.body.collideWorldBounds = true;
+    tranny3.body.collideWorldBounds = true;
+    tranny4.body.collideWorldBounds = true;
+    tranny5.body.collideWorldBounds = true;
+    cursors = game.input.keyboard.createCursorKeys();
+}
+
+function update() {
+    if (tranny1.body.position.x < 100){
+        //tranny1.body.velocity.x = 0;
+        //tranny1.animations.stop();
+        //tranny1.frame = 4;
+        tranny1.kill()
+        tranny2.kill()
+        tranny3.kill()
+        tranny4.kill()
+        tranny5.kill()
+        game.add.sprite(0, 0, 'the_end');
+
+
+    }
+    else {
+        tranny1.body.velocity.x = -100;
+        tranny1.animations.play('left');
+    }    
+        tranny2.body.velocity.x = -10;
+        tranny2.animations.play('left');
+        tranny3.body.velocity.x = -15;
+        tranny3.animations.play('left');
+        tranny4.body.velocity.x = -10;
+        tranny4.animations.play('left');
+        tranny5.body.velocity.x = -25;
+        tranny5.animations.play('left');
+/*
+    if (cursors.left.isDown)
+    {
+        //  Move to the left
+        tranny1.body.velocity.x = -150;
+
+        tranny1.animations.play('left');
+    }
+    else if (cursors.right.isDown)
+    {
+        //  Move to the right
+        tranny1.body.velocity.x = 150;
+
+        tranny1.animations.play('right');
+    }
+    else
+    {
+        //  Stand still
+        tranny1.animations.stop();
+
+        tranny1.frame = 4;
+    }
+*/
+
+}
+
+
+</script>
+
+</body>
+</html>
